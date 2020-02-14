@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.0 */
+/* VERSION 0.1.1 */
 /*****************/
 
 /*****************/
@@ -285,7 +285,7 @@
     #main {
         position: absolute;
         top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + 1px);
-        height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 2px);
+        height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 1px);
         width: 100%;
         overflow: initial;
         z-index: 10;
@@ -440,7 +440,7 @@
         }
         #main {
             top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + var(--vivaldi-safari-style-bookmarks-height));
-            height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 2px + var(--vivaldi-safari-style-bookmarks-height));
+            height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
             > .toolbar-addressbar {
                 top: calc(7px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
             }
@@ -451,8 +451,36 @@
                 border-top: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
                 border-bottom: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
                 box-sizing: border-box;
-                button > * {
-                    transform: translateY(-1px);
+                button {
+                    &.chevron {
+                        position: absolute;
+                        right: 0px;
+                        top: 0;
+                        bottom: 0;
+                        background: none;
+                        &::before, &::after {
+                            content: "";
+                            border-left: 0 !important;
+                            border-bottom: 0 !important;
+                            width: 5px;
+                            height: 5px;
+                            position: absolute;
+                            transform: rotate(135deg);
+                            left: calc(50% - 2px);
+                            top: calc(50% - 3px);
+                            opacity: 0.6;
+                            box-shadow: inset 0 1px 0 black, inset 1px 0px 0px black;
+                        }
+                        &::after {
+                            left: calc(50% - 6px);
+                        }
+                        svg {
+                            opacity: 0;
+                        }
+                    }
+                    > * {
+                        transform: translateY(-2px);
+                    }
                 }
             }
         }

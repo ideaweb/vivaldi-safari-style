@@ -5,3 +5,9 @@ This overview provides notable information about improvements, changes and fixes
 ## v0.1.0 14/02/2020
 
 Initial commit
+
+## v0.1.1 14/02/2020
+
+#### Bug Fixes:
+
+- Fixed bookmark bar.
