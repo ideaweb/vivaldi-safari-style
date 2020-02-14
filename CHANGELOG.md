@@ -10,4 +10,5 @@ Initial commit
 
 #### Bug Fixes:
 
+- Fixed rewind/forward buttons in toolbar.
 - Fixed bookmark bar.

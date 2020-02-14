@@ -321,19 +321,15 @@
                         &:disabled > * {
                             opacity: 0.45 !important;
                         }
-                    }
-                    &:not(.button-narrow) {
-                        button {
-                            width: var(--vivaldi-safari-style-button-width);
-                            height: var(--vivaldi-safari-style-button-height);
-                            background: var(--vivaldi-safari-style-button-background-active);
-                            border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
-                            border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
-                            border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
-                            border-radius: var(--radius) !important;
-                            svg {
-                                opacity: 0.8;
-                            }
+                        width: var(--vivaldi-safari-style-button-width);
+                        height: var(--vivaldi-safari-style-button-height);
+                        background: var(--vivaldi-safari-style-button-background-active);
+                        border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
+                        border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
+                        border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
+                        border-radius: var(--radius) !important;
+                        svg {
+                            opacity: 0.8;
                         }
                     }
                 }

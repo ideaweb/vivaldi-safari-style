@@ -281,15 +281,6 @@
 #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button {
   margin-left: 0px;
   margin-right: 4px;
-}
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button img {
-  fill: var(--vivaldi-safari-style-button-color);
-  max-height: 20px;
-}
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button:disabled > * {
-  opacity: 0.45 !important;
-}
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar:not(.button-narrow) button {
   width: var(--vivaldi-safari-style-button-width);
   height: var(--vivaldi-safari-style-button-height);
   background: var(--vivaldi-safari-style-button-background-active);
@@ -298,7 +289,14 @@
   border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
   border-radius: var(--radius) !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar:not(.button-narrow) button svg {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button img {
+  fill: var(--vivaldi-safari-style-button-color);
+  max-height: 20px;
+}
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button:disabled > * {
+  opacity: 0.45 !important;
+}
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg {
   opacity: 0.8;
 }
 #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button {
