@@ -1,0 +1,460 @@
+/*****************/
+/* VERSION 0.1.0 */
+/*****************/
+
+/*****************/
+/* DEFAULT THEME */
+/*****************/
+
+:root {
+
+    --vivaldi-safari-style-outline-color: #85b4fc;
+
+    --vivaldi-safari-style-controls-width: 75px;
+
+    --vivaldi-safari-style-inactive: #f6f6f6;
+
+    /* Border colors */
+    --vivaldi-safari-style-title-border-color-active: #aaaaaa;
+    --vivaldi-safari-style-title-border-color-inactive: #dbdbdb;
+
+    /******************/
+    /* NAVIGATION BAR */
+    /******************/
+
+    /* Default Background color (gradiant) */
+    --vivaldi-safari-style-bar-background-color-top: rgba(0,0,0,0);
+    --vivaldi-safari-style-bar-background-color-bottom: rgba(0,0,0,0.1);
+    /* Background color for private windows */
+    --vivaldi-safari-style-bar-background-color-private: #636363;
+    /* Background color for inactive windows */
+    --vivaldi-safari-style-bar-background-color-inactive: var(--vivaldi-safari-style-inactive);
+
+    /* Max height of navigation bar */
+    --vivaldi-safari-style-bar-height: 39px;
+
+    /* Border colors */
+    --vivaldi-safari-style-bar-border-color-active: #c1c2c2;
+    --vivaldi-safari-style-bar-border-color-inactive: #dfdfdf;
+
+    /********/
+    /* TABS */
+    /********/
+
+    /* Max height of a tab */
+    --vivaldi-safari-style-tab-height: 25px;
+
+    /* Default background color (gradiant) */
+    --vivaldi-safari-style-tab-background-color-top: var(--colorBgDark);
+    --vivaldi-safari-style-tab-background-color-bottom: var(--colorBgDarker);
+    /* Background active tab (gradiant) */
+    --vivaldi-safari-style-tab-background-color-selected-top: rgba(0,0,0,0.075);
+    --vivaldi-safari-style-tab-background-color-selected-bottom: rgba(0,0,0,0.1);
+    /* Background inactive tab */
+    --vivaldi-safari-style-tab-background-color-inactive: var(--vivaldi-safari-style-inactive);
+    /* Button background hover on incative tab */
+    --vivaldi-safari-style-tab-background-color-hover: #afafaf;
+    /* Icon size of favicon, throbber, sound etc. */
+    --vivaldi-safari-style-button-icon: 12px;
+
+    /* Border colors */
+    --vivaldi-safari-style-tab-border-color-active: rgba(0,0,0,0.075);
+    --vivaldi-safari-style-tab-border-color-inactive: #dbdbdb;
+
+    /* Colors e.g. for tabs or bookmarks */
+    --vivaldi-safari-style-tab-color: hsl(240, 5%, 5%);
+    --vivaldi-safari-style-tab-hover-color: #ffffff;
+    --vivaldi-safari-style-tab-hover-background: #acadad;
+
+    /********************/
+    /* BUTTONS (URLBAR) */
+    /********************/
+
+    /* Button default size */
+    --vivaldi-safari-style-button-width: 36px;
+    --vivaldi-safari-style-button-height: 24px;
+    /* Button background */
+    --vivaldi-safari-style-button-background-active: var(--colorBg);
+    --vivaldi-safari-style-button-background-inactive: var(--vivaldi-safari-style-inactive);
+    /* Border color of buttons and urlbar */
+    --vivaldi-safari-style-button-border-color: rgba(0,0,0,0.15);
+    --vivaldi-safari-style-button-border-color-top: rgba(0,0,0,0.15);
+    --vivaldi-safari-style-button-border-color-bottom: rgba(0,0,0,0.25);
+    --vivaldi-safari-style-button-border-color-inactive: #c0c0c0;
+    /* Font and icon color of buttons and urlbar */
+    --vivaldi-safari-style-button-color: #5f5f5f;
+
+    --tab-min-height: var(--vivaldi-safari-style-tab-height) !important;
+    --space-above-tabbar: 0 !important;
+    --toolbarbutton-vertical-text-padding: 4px !important;
+}
+
+/**************/
+/* DARK THEME */
+/**************/
+
+
+ 
+#browser.mac.tabs-top {
+    --radius: 5px !important;
+    /*--colorAccentBgDarker: var(--vivaldi-safari-style-tab-border-color-active) !important;
+    --colorBorder: var(--vivaldi-safari-style-tab-border-color-active) !important;*/
+
+    --vivaldi-safari-style-bar-background-color: var(--colorAccentBg);
+    --vivaldi-safari-style-tab-background-color-selected: var(--colorAccentBg);
+    --vivaldi-safari-style-tab-background-color: var(--colorBg);
+    
+    &.color-behind-tabs-on {
+
+        --vivaldi-safari-style-bar-background-color: var(--colorBgLight);
+        --vivaldi-safari-style-tab-background-color-selected: var(--colorBgLight);
+        --vivaldi-safari-style-tab-background-color: var(--colorAccentBg);
+    }
+    --vivaldi-safari-style-button-background-active: var(--colorBgIntenser);
+    --vivaldi-safari-style-button-border-color: rgba(0,0,0,0.175);
+    --vivaldi-safari-style-button-border-color-top: rgba(0,0,0,0.15);
+    --vivaldi-safari-style-button-border-color-bottom: rgba(0,0,0,0.25);
+    --vivaldi-safari-style-button-color: var(--colorFg);
+    --vivaldi-safari-style-button-nav-margin: -1px;
+
+    &.theme-dark {
+        --vivaldi-safari-style-button-background-active: var(--vivaldi-safari-style-tab-background-color);
+        --vivaldi-safari-style-button-border-color: var(--vivaldi-safari-style-button-background-active);
+        --vivaldi-safari-style-button-border-color-top: rgba(255,255,255,0.075);
+        --vivaldi-safari-style-button-border-color-bottom: var(--vivaldi-safari-style-button-background-active);
+        --vivaldi-safari-style-button-nav-margin: 1px;
+
+        .toolbar-extensions {
+            button[title="1Password"] img {
+                filter: invert(100%);
+            }
+        }
+    }
+
+    #header {
+        height: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + 1px);
+        #titlebar {
+            height: var(--vivaldi-safari-style-bar-height);
+            background: var(--vivaldi-safari-style-bar-background-color) linear-gradient(to bottom, var(--vivaldi-safari-style-bar-background-color-top) 0%, var(--vivaldi-safari-style-bar-background-color-bottom) 100%) !important;
+            .window-buttongroup {
+                margin-left: 12px;
+                margin-top: 12px !important;
+                z-index: 5;
+            }
+        }
+        #tabs-container {
+            position: relative;
+            height: calc(var(--vivaldi-safari-style-tab-height) + 1px) !important;
+            margin-top: var(--vivaldi-safari-style-bar-height);
+            padding-top: 0 !important;
+            padding-left: 0 !important;
+            background-color: var(--vivaldi-safari-style-tab-background-color);
+            background-image: linear-gradient(to bottom, var(--vivaldi-safari-style-tab-background-color-selected-bottom) 0%, var(--vivaldi-safari-style-tab-background-color-selected-bottom) 100%), linear-gradient(to bottom, var(--vivaldi-safari-style-tab-background-color-top) 0%, var(--vivaldi-safari-style-tab-background-color-selected-bottom) 100%) !important; /*var(--vivaldi-safari-style-tab-background-color) linear-gradient(to bottom, var(--vivaldi-safari-style-tab-background-color-top) 0%, var(--vivaldi-safari-style-tab-background-color-bottom) 100%) !important;*/
+            box-shadow: none !important;
+            &::before, &::after {
+                content: '';
+                position: absolute;
+                width: 100%;
+                z-index: 1;
+                height: 1px;
+                background-color: var(--vivaldi-safari-style-button-border-color-top);
+                opacity: 0.75;
+            }
+            &::before {
+                top: -1px;
+            }
+            &::after {
+                bottom: 0;
+                opacity: 0.3;
+            }
+            .resize  {
+                min-width: calc(100% + 38px);
+                .tab-strip {
+                    > * {
+                        &.toolbar {
+                            max-width: 25px;
+                        }
+                        .tab {
+                            background: transparent !important;
+                            margin-left: 0 !important;
+                            margin-right: 0 !important;
+                            border-right: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-top) !important;
+                            &:not(.pinned) {
+                                padding-right: 10px;
+                            }
+                            &.active {
+                                background: var(--vivaldi-safari-style-tab-background-color-selected) linear-gradient(to bottom, var(--vivaldi-safari-style-tab-background-color-selected-top) 0%, var(--vivaldi-safari-style-tab-background-color-selected-bottom) 100%) !important;
+                                height: calc(var(--vivaldi-safari-style-tab-height) + 1px) !important;
+                                border-right: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
+                                box-shadow: inset 0 -1px 0 var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
+                            }
+                            /*&:not(.active):hover {
+                                background-color: var(--colorImageBackgroundAlpha, var(--colorAccentBgAlpha)) !important;
+                            }*/
+                            &::before, &::after {
+                                display: none !important;
+                            }
+                            .tab-header {
+                                flex: 0 0 var(--vivaldi-safari-style-tab-height);
+                                padding-top: 3px;
+                                padding-bottom: 3px;
+                            }
+                            .favicon {
+                                filter: drop-shadow(1px 0 0 rgba(246, 246, 246, 0.05)) drop-shadow(-1px 0 0 rgba(246, 246, 246, 0.05)) drop-shadow(0 1px 0 rgba(246, 246, 246, 0.05)) drop-shadow(0 -1px 0 rgba(246, 246, 246, 0.05)) !important;
+                                img {
+                                    border-radius: 2px;
+                                }
+                            }
+                            .close {
+                                transform: scale(0.77) translate(-1px, 1px);
+                            }
+                            box-shadow: none !important;
+                        }
+                    }
+                }
+            }
+            .button-toolbar.newtab {
+                top: 0px !important;
+                z-index: 9 !important;
+                &, button {
+                    width: var(--vivaldi-safari-style-tab-height) !important;
+                    min-width: var(--vivaldi-safari-style-tab-height) !important;
+                    max-width: var(--vivaldi-safari-style-tab-height) !important;
+                    height: var(--vivaldi-safari-style-tab-height) !important;
+                    min-height: var(--vivaldi-safari-style-tab-height) !important;
+                    max-height: var(--vivaldi-safari-style-tab-height) !important;
+                }
+                button {
+                    opacity: 0.75;
+                    transform: translateX(-1px);
+                    svg {
+                        display: none !important;
+                    }
+                    &::before, &:hover::before, &::after, &:hover::after {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: calc(50% - 1px);
+                        left: calc(100% / 3);
+                        width: calc(100% / 3);
+                        height: 1px;
+                        background: var(--colorAccentFg) !important;
+                        opacity: 0.65;
+                    }
+                    &::after, &:hover::after {
+                        top: calc(100% / 3);
+                        left: calc(50% - 1px);
+                        width: 1px;
+                        height: calc(100% / 3);
+                    }
+                }
+            }
+            .sync-and-trash-container {
+                display: none !important;
+                button {
+                    z-index: 9 !important;
+                    overflow: hidden;
+                    transform: scale(0.7) translate(0px, -3px);
+                    &, svg {
+                        width: var(--vivaldi-safari-style-tab-height) !important;
+                        min-width: var(--vivaldi-safari-style-tab-height) !important;
+                        max-width: var(--vivaldi-safari-style-tab-height) !important;
+                        height: calc(var(--vivaldi-safari-style-tab-height) - 1px) !important;
+                        min-height: calc(var(--vivaldi-safari-style-tab-height) - 1px) !important;
+                        max-height: calc(var(--vivaldi-safari-style-tab-height) - 1px) !important;
+                    }
+                    svg {
+                        --vivaldi-safari-style-trash-size: 24px;
+                        width: var(--vivaldi-safari-style-trash-size) !important;
+                        min-width: var(--vivaldi-safari-style-trash-size) !important;
+                        max-width: var(--vivaldi-safari-style-trash-size) !important;
+                        margin-top: -1px;
+                        opacity: 0.9;
+                    }
+                }
+            }
+        }
+    }
+    &.tabs-top {
+        #main {
+            > .toolbar-addressbar {
+                margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
+            }
+        }
+    }
+    #main {
+        position: absolute;
+        top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + 1px);
+        height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 2px);
+        width: 100%;
+        overflow: initial;
+        z-index: 10;
+        > .toolbar-addressbar {
+            position: absolute;
+            top: calc(6px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height));
+            width: calc(100% - var(--vivaldi-safari-style-controls-width));
+            left: var(--vivaldi-safari-style-controls-width);
+            &.tabs-top {
+                margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
+            }
+            padding-bottom: 1px;
+            padding-right: 3px;
+            background-color: transparent !important;
+            &::after {
+                bottom: 1px;
+                z-index: 0;
+                display: none;
+            }
+            > .toolbar {
+                background-color: transparent !important;
+                &::after {
+                    display: none;
+                }
+                .button-toolbar {
+                    button {
+                        margin-left: 0px;
+                        margin-right: 4px;
+                        svg, img {
+                            fill: var(--vivaldi-safari-style-button-color);
+                            max-height: 20px;
+                        }
+                        &:disabled > * {
+                            opacity: 0.45 !important;
+                        }
+                    }
+                    &:not(.button-narrow) {
+                        button {
+                            width: var(--vivaldi-safari-style-button-width);
+                            height: var(--vivaldi-safari-style-button-height);
+                            background: var(--vivaldi-safari-style-button-background-active);
+                            border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
+                            border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
+                            border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
+                            border-radius: var(--radius) !important;
+                            svg {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+                }
+                &:first-child {
+                    .button-toolbar:first-child button {
+                        margin-right: var(--vivaldi-safari-style-button-nav-margin);
+                    }
+                }
+                &:first-child/*,
+                &.toolbar-extensions*/ {
+                    .button-toolbar:first-child,
+                    .button-toolbar:first-child + .button-toolbar {
+                        button, button svg {
+                            width: calc(var(--vivaldi-safari-style-button-height) + 2px) !important;
+                            min-width: calc(var(--vivaldi-safari-style-button-height) + 2px) !important;
+                        }
+                        button svg {
+                            flex: 0 1 calc(var(--vivaldi-safari-style-button-height) + 2px);
+                            object-fit: cover;
+                        }
+                    }
+                }
+                &.toolbar-extensions {
+                    button img {
+                        transform: scale(0.86);
+                        /*filter: grayscale(100%);*/
+                    }
+                    .button-badge {
+                        box-shadow: none !important;
+                        text-shadow: none !important;
+                    }
+                }
+            }
+            .SiteInfoButton, .private-window-indicator {
+                border-top-left-radius: calc(var(--radius) - 1px);
+                border-bottom-left-radius: calc(var(--radius) - 1px);
+                background-color: transparent !important;
+            }
+            .button-toolbar > button {
+                border-width: 0;
+                .button-badge {
+                    height: 12px;
+                    width: 12px;
+                    min-width: 12px;
+                    font-size: 8px;
+                }
+            }
+            .addressfield, .searchfield {
+                height: var(--vivaldi-safari-style-button-height);
+                border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
+                border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
+                border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
+                border-radius: var(--radius) !important;
+                padding: 0 !important;
+                margin-left: 0 !important;
+                margin-right: 0 !important;
+                &:focus-within {
+                    border-color: var(--vivaldi-safari-style-outline-color) !important;
+                    box-shadow: 0 0 0 1px var(--vivaldi-safari-style-outline-color) !important;
+                }
+                .button-toolbar button {
+                    > svg, > span > svg {
+                        opacity: 0.8;
+                    }
+                }
+            }
+            .addressfield {
+                margin-left: 115px !important;
+                margin-right: 115px !important;
+            }
+            .OmniDropdown {
+                z-index: 10000 !important;
+                position: absolute !important;
+                top: calc(var(--vivaldi-safari-style-bar-height) - 22px) !important;
+                border: 2px solid var(--vivaldi-safari-style-outline-color);
+                border-top: 0;
+                border-bottom-left-radius: var(--radius);
+                border-bottom-right-radius: var(--radius);
+                background-color: var(--colorBgIntenser);
+                width: calc(100% + 3px);
+                margin-left: -2px;
+                box-shadow: 0px 5px 5px -1px rgba(0,0,0,0.35) !important;
+            }
+        }
+    }
+
+    &:not(.private) {
+        #main {
+            > .toolbar-addressbar {
+                .addressfield, .searchfield {
+                    background: var(--vivaldi-safari-style-button-background-active) !important;
+                }
+            }
+        }
+    }
+
+    &.bookmark-bar-top {
+        --vivaldi-safari-style-bookmarks-height: 28px;
+        #header {
+            height: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + 1px + var(--vivaldi-safari-style-bookmarks-height) - 1px);
+            #tabs-container {
+                margin-top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-bookmarks-height) - 1px);
+            }
+        }
+        #main {
+            top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + var(--vivaldi-safari-style-bookmarks-height));
+            height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 2px + var(--vivaldi-safari-style-bookmarks-height));
+            > .toolbar-addressbar {
+                top: calc(7px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
+            }
+            .bookmark-bar {
+                top: -54px;
+                position: absolute;
+                width: 100%;
+                border-top: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
+                border-bottom: 1px solid var(--vivaldi-safari-style-tab-background-color-selected-bottom) !important;
+                box-sizing: border-box;
+                button > * {
+                    transform: translateY(-1px);
+                }
+            }
+        }
+    }
+}
