@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.1 */
+/* VERSION 0.1.2 */
 /*****************/
 /*****************/
 /* DEFAULT THEME */
@@ -371,6 +371,18 @@
 }
 #browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .searchfield {
   background: var(--vivaldi-safari-style-button-background-active) !important;
+}
+#browser.mac.tabs-top.fullscreen #titlebar .window-buttongroup {
+  opacity: 1 !important;
+}
+#browser.mac.tabs-top.fullscreen #tabs-container .tab-strip {
+  transform: none !important;
+}
+#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover #header, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar {
+  transform: translateY(0) !important;
+}
+#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar {
+  box-shadow: none !important;
 }
 #browser.mac.tabs-top.bookmark-bar-top {
   --vivaldi-safari-style-bookmarks-height: 28px;

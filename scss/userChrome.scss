@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.1 */
+/* VERSION 0.1.2 */
 /*****************/
 
 /*****************/
@@ -422,6 +422,25 @@
                 .addressfield, .searchfield {
                     background: var(--vivaldi-safari-style-button-background-active) !important;
                 }
+            }
+        }
+    }
+
+    &.fullscreen {
+        #titlebar .window-buttongroup {
+            opacity: 1 !important;
+        }
+        #tabs-container {
+            .tab-strip {
+                transform: none !important;
+            }
+        }
+        &.mac-fullscreen-hover {
+            #header, .bookmark-bar, .toolbar-addressbar {
+                transform: translateY(0) !important;
+            }
+            .toolbar-addressbar, .bookmark-bar {
+                box-shadow: none !important;
             }
         }
     }

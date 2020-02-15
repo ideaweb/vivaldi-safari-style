@@ -12,3 +12,9 @@ Initial commit
 
 - Fixed rewind/forward buttons in toolbar.
 - Fixed bookmark bar.
+
+## v0.1.2 15/02/2020
+
+#### Bug Fixes:
+
+- Workaround for broken fullscreen.
