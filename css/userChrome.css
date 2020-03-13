@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.2 */
+/* VERSION 0.1.3 */
 /*****************/
 /*****************/
 /* DEFAULT THEME */
@@ -184,6 +184,9 @@
 #browser.mac.tabs-top #header #tabs-container .resize .tab-strip > * .tab .close {
   transform: scale(0.77) translate(-1px, 1px);
 }
+#browser.mac.tabs-top #header #tabs-container .resize .tab-position {
+  overflow: hidden;
+}
 #browser.mac.tabs-top #header #tabs-container .button-toolbar.newtab {
   top: 0px !important;
   z-index: 9 !important;
@@ -248,8 +251,6 @@
   margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
 }
 #browser.mac.tabs-top #main {
-  position: absolute;
-  top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + 1px);
   height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - 1px);
   width: 100%;
   overflow: initial;
@@ -394,7 +395,6 @@
   margin-top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-bookmarks-height) - 1px);
 }
 #browser.mac.tabs-top.bookmark-bar-top #main {
-  top: calc(var(--vivaldi-safari-style-bar-height) + var(--vivaldi-safari-style-tab-height) + var(--vivaldi-safari-style-bookmarks-height));
   height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
 }
 #browser.mac.tabs-top.bookmark-bar-top #main > .toolbar-addressbar {
@@ -436,6 +436,13 @@
 }
 #browser.mac.tabs-top.bookmark-bar-top #main .bookmark-bar button > * {
   transform: translateY(-2px);
+}
+#browser.mac.tabs-top > .toolbar-statusbar {
+  background-color: var(--colorBgLight);
+  border-top: 1px solid var(--vivaldi-safari-style-button-border-color-top) !important;
+}
+#browser.mac.tabs-top > .toolbar-statusbar > * {
+  transform: translateY(-1px);
 }
 
 /*# sourceMappingURL=userChrome.css.map */
