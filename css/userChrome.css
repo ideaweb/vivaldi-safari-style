@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.3 */
+/* VERSION 0.1.4 */
 /*****************/
 /*****************/
 /* DEFAULT THEME */
@@ -326,6 +326,9 @@
   border-top-left-radius: calc(var(--radius) - 1px);
   border-bottom-left-radius: calc(var(--radius) - 1px);
   background-color: transparent !important;
+}
+#browser.mac.tabs-top #main > .toolbar-addressbar .SiteInfoButton.insecure {
+  fill: #db4437 !important;
 }
 #browser.mac.tabs-top #main > .toolbar-addressbar .button-toolbar > button {
   border-width: 0;

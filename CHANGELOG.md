@@ -2,6 +2,12 @@
 
 This overview provides notable information about improvements, changes and fixes through all versions.
 
+## v0.1.4 20/04/2020
+
+#### Bug Fixes:
+
+- Fixed site info button for insecure sites.
+
 ## v0.1.3 13/03/2020
 
 #### Bug Fixes:
