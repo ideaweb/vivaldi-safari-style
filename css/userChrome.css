@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.4 */
+/* VERSION 0.1.5 */
 /*****************/
 /*****************/
 /* DEFAULT THEME */
@@ -7,7 +7,6 @@
 :root {
   --vivaldi-safari-style-outline-color: #85b4fc;
   --vivaldi-safari-style-controls-width: 75px;
-  --vivaldi-safari-style-inactive: #f6f6f6;
   /* Border colors */
   --vivaldi-safari-style-title-border-color-active: #aaaaaa;
   --vivaldi-safari-style-title-border-color-inactive: #dbdbdb;
@@ -19,8 +18,6 @@
   --vivaldi-safari-style-bar-background-color-bottom: rgba(0,0,0,0.1);
   /* Background color for private windows */
   --vivaldi-safari-style-bar-background-color-private: #636363;
-  /* Background color for inactive windows */
-  --vivaldi-safari-style-bar-background-color-inactive: var(--vivaldi-safari-style-inactive);
   /* Max height of navigation bar */
   --vivaldi-safari-style-bar-height: 39px;
   /* Border colors */
@@ -94,8 +91,8 @@
   --vivaldi-safari-style-tab-background-color: var(--colorAccentBg);
 }
 #browser.mac.tabs-top.theme-dark {
-  --vivaldi-safari-style-button-background-active: var(--vivaldi-safari-style-tab-background-color);
-  --vivaldi-safari-style-button-border-color: var(--vivaldi-safari-style-button-background-active);
+  --vivaldi-safari-style-button-background-active: var(--vivaldi-safari-style-tab-background-color) !important;
+  --vivaldi-safari-style-button-border-color: var(--vivaldi-safari-style-button-background-active) !important;
   --vivaldi-safari-style-button-border-color-top: rgba(255,255,255,0.075);
   --vivaldi-safari-style-button-border-color-bottom: var(--vivaldi-safari-style-button-background-active);
   --vivaldi-safari-style-button-nav-margin: 1px;
@@ -247,7 +244,7 @@
   margin-top: -1px;
   opacity: 0.9;
 }
-#browser.mac.tabs-top.tabs-top #main > .toolbar-addressbar {
+#browser.mac.tabs-top.tabs-top #main > .toolbar-addressbar, #browser.mac.tabs-top.tabs-top #main > .toolbar-mainbar {
   margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
 }
 #browser.mac.tabs-top #main {
@@ -256,7 +253,7 @@
   overflow: initial;
   z-index: 10;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar {
+#browser.mac.tabs-top #main > .toolbar-addressbar, #browser.mac.tabs-top #main > .toolbar-mainbar {
   position: absolute;
   top: calc(6px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height));
   width: calc(100% - var(--vivaldi-safari-style-controls-width));
@@ -265,21 +262,21 @@
   padding-right: 3px;
   background-color: transparent !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar.tabs-top {
+#browser.mac.tabs-top #main > .toolbar-addressbar.tabs-top, #browser.mac.tabs-top #main > .toolbar-mainbar.tabs-top {
   margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar::after {
+#browser.mac.tabs-top #main > .toolbar-addressbar::after, #browser.mac.tabs-top #main > .toolbar-mainbar::after {
   bottom: 1px;
   z-index: 0;
   display: none;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar {
   background-color: transparent !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar::after {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar::after, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar::after {
   display: none;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar .button-toolbar button {
   margin-left: 0px;
   margin-right: 4px;
   width: var(--vivaldi-safari-style-button-width);
@@ -290,56 +287,59 @@
   border-bottom-color: var(--vivaldi-safari-style-button-border-color-bottom) !important;
   border-radius: var(--radius) !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button img {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button img, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar .button-toolbar button img {
   fill: var(--vivaldi-safari-style-button-color);
   max-height: 20px;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button:disabled > * {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button:disabled > *, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar .button-toolbar button:disabled > * {
   opacity: 0.45 !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar .button-toolbar button svg {
   opacity: 0.8;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child button {
   margin-right: var(--vivaldi-safari-style-button-nav-margin);
 }
 #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button, #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button svg,
 #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button,
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child button, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child button svg,
+#browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button,
+#browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg {
   width: calc(var(--vivaldi-safari-style-button-height) + 2px) !important;
   min-width: calc(var(--vivaldi-safari-style-button-height) + 2px) !important;
 }
 #browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child button svg,
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child button svg,
+#browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar:first-child .button-toolbar:first-child + .button-toolbar button svg {
   flex: 0 1 calc(var(--vivaldi-safari-style-button-height) + 2px);
   object-fit: cover;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar.toolbar-extensions button img {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar.toolbar-extensions button img, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar.toolbar-extensions button img {
   transform: scale(0.86);
   /*filter: grayscale(100%);*/
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar.toolbar-extensions .button-badge {
+#browser.mac.tabs-top #main > .toolbar-addressbar > .toolbar.toolbar-extensions .button-badge, #browser.mac.tabs-top #main > .toolbar-mainbar > .toolbar.toolbar-extensions .button-badge {
   box-shadow: none !important;
   text-shadow: none !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .SiteInfoButton, #browser.mac.tabs-top #main > .toolbar-addressbar .private-window-indicator {
+#browser.mac.tabs-top #main > .toolbar-addressbar .SiteInfoButton, #browser.mac.tabs-top #main > .toolbar-addressbar .private-window-indicator, #browser.mac.tabs-top #main > .toolbar-mainbar .SiteInfoButton, #browser.mac.tabs-top #main > .toolbar-mainbar .private-window-indicator {
   border-top-left-radius: calc(var(--radius) - 1px);
   border-bottom-left-radius: calc(var(--radius) - 1px);
   background-color: transparent !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .SiteInfoButton.insecure {
+#browser.mac.tabs-top #main > .toolbar-addressbar .SiteInfoButton.insecure, #browser.mac.tabs-top #main > .toolbar-mainbar .SiteInfoButton.insecure {
   fill: #db4437 !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .button-toolbar > button {
+#browser.mac.tabs-top #main > .toolbar-addressbar .button-toolbar > button, #browser.mac.tabs-top #main > .toolbar-mainbar .button-toolbar > button {
   border-width: 0;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .button-toolbar > button .button-badge {
+#browser.mac.tabs-top #main > .toolbar-addressbar .button-toolbar > button .button-badge, #browser.mac.tabs-top #main > .toolbar-mainbar .button-toolbar > button .button-badge {
   height: 12px;
   width: 12px;
   min-width: 12px;
   font-size: 8px;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield {
+#browser.mac.tabs-top #main > .toolbar-addressbar .UrlBar-AddressField, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield, #browser.mac.tabs-top #main > .toolbar-mainbar .UrlBar-AddressField, #browser.mac.tabs-top #main > .toolbar-mainbar .addressfield, #browser.mac.tabs-top #main > .toolbar-mainbar .searchfield {
   height: var(--vivaldi-safari-style-button-height);
   border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
   border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
@@ -349,18 +349,18 @@
   margin-left: 0 !important;
   margin-right: 0 !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .addressfield:focus-within, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield:focus-within {
+#browser.mac.tabs-top #main > .toolbar-addressbar .UrlBar-AddressField:focus-within, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield:focus-within, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield:focus-within, #browser.mac.tabs-top #main > .toolbar-mainbar .UrlBar-AddressField:focus-within, #browser.mac.tabs-top #main > .toolbar-mainbar .addressfield:focus-within, #browser.mac.tabs-top #main > .toolbar-mainbar .searchfield:focus-within {
   border-color: var(--vivaldi-safari-style-outline-color) !important;
   box-shadow: 0 0 0 1px var(--vivaldi-safari-style-outline-color) !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .addressfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield .button-toolbar button > span > svg {
+#browser.mac.tabs-top #main > .toolbar-addressbar .UrlBar-AddressField .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .UrlBar-AddressField .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-addressbar .searchfield .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .UrlBar-AddressField .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .UrlBar-AddressField .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .addressfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .addressfield .button-toolbar button > span > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .searchfield .button-toolbar button > svg, #browser.mac.tabs-top #main > .toolbar-mainbar .searchfield .button-toolbar button > span > svg {
   opacity: 0.8;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .addressfield {
+#browser.mac.tabs-top #main > .toolbar-addressbar .UrlBar-AddressField, #browser.mac.tabs-top #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top #main > .toolbar-mainbar .UrlBar-AddressField, #browser.mac.tabs-top #main > .toolbar-mainbar .addressfield {
   margin-left: 115px !important;
   margin-right: 115px !important;
 }
-#browser.mac.tabs-top #main > .toolbar-addressbar .OmniDropdown {
+#browser.mac.tabs-top #main > .toolbar-addressbar .OmniDropdown, #browser.mac.tabs-top #main > .toolbar-mainbar .OmniDropdown {
   z-index: 10000 !important;
   position: absolute !important;
   top: calc(var(--vivaldi-safari-style-bar-height) - 22px) !important;
@@ -373,7 +373,7 @@
   margin-left: -2px;
   box-shadow: 0px 5px 5px -1px rgba(0, 0, 0, 0.35) !important;
 }
-#browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .searchfield {
+#browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .UrlBar-AddressField, #browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .addressfield, #browser.mac.tabs-top:not(.private) #main > .toolbar-addressbar .searchfield, #browser.mac.tabs-top:not(.private) #main > .toolbar-mainbar .UrlBar-AddressField, #browser.mac.tabs-top:not(.private) #main > .toolbar-mainbar .addressfield, #browser.mac.tabs-top:not(.private) #main > .toolbar-mainbar .searchfield {
   background: var(--vivaldi-safari-style-button-background-active) !important;
 }
 #browser.mac.tabs-top.fullscreen #titlebar .window-buttongroup {
@@ -382,10 +382,10 @@
 #browser.mac.tabs-top.fullscreen #tabs-container .tab-strip {
   transform: none !important;
 }
-#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover #header, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar {
+#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover #header, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover #main > .toolbar-mainbar {
   transform: translateY(0) !important;
 }
-#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar {
+#browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .toolbar-addressbar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover .bookmark-bar, #browser.mac.tabs-top.fullscreen.mac-fullscreen-hover #main > .toolbar-mainbar {
   box-shadow: none !important;
 }
 #browser.mac.tabs-top.bookmark-bar-top {
@@ -400,7 +400,7 @@
 #browser.mac.tabs-top.bookmark-bar-top #main {
   height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
 }
-#browser.mac.tabs-top.bookmark-bar-top #main > .toolbar-addressbar {
+#browser.mac.tabs-top.bookmark-bar-top #main > .toolbar-addressbar, #browser.mac.tabs-top.bookmark-bar-top #main > .toolbar-mainbar {
   top: calc(7px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
 }
 #browser.mac.tabs-top.bookmark-bar-top #main .bookmark-bar {
@@ -446,6 +446,14 @@
 }
 #browser.mac.tabs-top > .toolbar-statusbar > * {
   transform: translateY(-1px);
+}
+#browser.mac.tabs-top.isblurred.dim-blurred {
+  --vivaldi-safari-style-button-border-color: rgba(0,0,0,0.1);
+  --vivaldi-safari-style-button-border-color-top: rgba(0,0,0,0.1);
+  --vivaldi-safari-style-button-border-color-bottom: rgba(0,0,0,0.1);
+}
+#browser.mac.tabs-top.isblurred.dim-blurred .UrlBar-AddressField .UrlField, #browser.mac.tabs-top.isblurred.dim-blurred .addressfield .UrlField, #browser.mac.tabs-top.isblurred.dim-blurred .searchfield input, #browser.mac.tabs-top.isblurred.dim-blurred #tabs-container .tab .title {
+  filter: opacity(0.5);
 }
 
 /*# sourceMappingURL=userChrome.css.map */

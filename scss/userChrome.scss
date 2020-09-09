@@ -1,5 +1,5 @@
 /*****************/
-/* VERSION 0.1.4 */
+/* VERSION 0.1.5 */
 /*****************/
 
 /*****************/
@@ -11,8 +11,6 @@
     --vivaldi-safari-style-outline-color: #85b4fc;
 
     --vivaldi-safari-style-controls-width: 75px;
-
-    --vivaldi-safari-style-inactive: #f6f6f6;
 
     /* Border colors */
     --vivaldi-safari-style-title-border-color-active: #aaaaaa;
@@ -27,8 +25,6 @@
     --vivaldi-safari-style-bar-background-color-bottom: rgba(0,0,0,0.1);
     /* Background color for private windows */
     --vivaldi-safari-style-bar-background-color-private: #636363;
-    /* Background color for inactive windows */
-    --vivaldi-safari-style-bar-background-color-inactive: var(--vivaldi-safari-style-inactive);
 
     /* Max height of navigation bar */
     --vivaldi-safari-style-bar-height: 39px;
@@ -118,8 +114,8 @@
     --vivaldi-safari-style-button-nav-margin: -1px;
 
     &.theme-dark {
-        --vivaldi-safari-style-button-background-active: var(--vivaldi-safari-style-tab-background-color);
-        --vivaldi-safari-style-button-border-color: var(--vivaldi-safari-style-button-background-active);
+        --vivaldi-safari-style-button-background-active: var(--vivaldi-safari-style-tab-background-color) !important;
+        --vivaldi-safari-style-button-border-color: var(--vivaldi-safari-style-button-background-active) !important;
         --vivaldi-safari-style-button-border-color-top: rgba(255,255,255,0.075);
         --vivaldi-safari-style-button-border-color-bottom: var(--vivaldi-safari-style-button-background-active);
         --vivaldi-safari-style-button-nav-margin: 1px;
@@ -280,7 +276,7 @@
     }
     &.tabs-top {
         #main {
-            > .toolbar-addressbar {
+            > .toolbar-addressbar, > .toolbar-mainbar {
                 margin-bottom: calc(var(--vivaldi-safari-style-tab-height) - 1px);
             }
         }
@@ -290,7 +286,7 @@
         width: 100%;
         overflow: initial;
         z-index: 10;
-        > .toolbar-addressbar {
+        > .toolbar-addressbar, > .toolbar-mainbar {
             position: absolute;
             top: calc(6px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height));
             width: calc(100% - var(--vivaldi-safari-style-controls-width));
@@ -381,7 +377,7 @@
                     font-size: 8px;
                 }
             }
-            .addressfield, .searchfield {
+            .UrlBar-AddressField, .addressfield, .searchfield {
                 height: var(--vivaldi-safari-style-button-height);
                 border: 0.5px solid var(--vivaldi-safari-style-button-border-color) !important;
                 border-top-color: var(--vivaldi-safari-style-button-border-color-top) !important;
@@ -400,7 +396,7 @@
                     }
                 }
             }
-            .addressfield {
+            .UrlBar-AddressField, .addressfield {
                 margin-left: 115px !important;
                 margin-right: 115px !important;
             }
@@ -422,8 +418,8 @@
 
     &:not(.private) {
         #main {
-            > .toolbar-addressbar {
-                .addressfield, .searchfield {
+            > .toolbar-addressbar, > .toolbar-mainbar {
+                .UrlBar-AddressField, .addressfield, .searchfield {
                     background: var(--vivaldi-safari-style-button-background-active) !important;
                 }
             }
@@ -440,10 +436,10 @@
             }
         }
         &.mac-fullscreen-hover {
-            #header, .bookmark-bar, .toolbar-addressbar {
+            #header, .bookmark-bar, .toolbar-addressbar, #main > .toolbar-mainbar {
                 transform: translateY(0) !important;
             }
-            .toolbar-addressbar, .bookmark-bar {
+            .toolbar-addressbar, .bookmark-bar, #main > .toolbar-mainbar {
                 box-shadow: none !important;
             }
         }
@@ -459,7 +455,7 @@
         }
         #main {
             height: calc(100% - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
-            > .toolbar-addressbar {
+            > .toolbar-addressbar, > .toolbar-mainbar {
                 top: calc(7px - var(--vivaldi-safari-style-bar-height) - var(--vivaldi-safari-style-tab-height) - var(--vivaldi-safari-style-bookmarks-height));
             }
             .bookmark-bar {
@@ -509,6 +505,15 @@
         border-top: 1px solid var(--vivaldi-safari-style-button-border-color-top) !important;
         > * {
             transform: translateY(-1px);
+        }
+    }
+
+    &.isblurred.dim-blurred {
+        --vivaldi-safari-style-button-border-color: rgba(0,0,0,0.1);
+        --vivaldi-safari-style-button-border-color-top: rgba(0,0,0,0.1);
+        --vivaldi-safari-style-button-border-color-bottom: rgba(0,0,0,0.1);
+        .UrlBar-AddressField .UrlField, .addressfield .UrlField, .searchfield input, #tabs-container .tab .title {
+            filter: opacity(0.5);
         }
     }
 }

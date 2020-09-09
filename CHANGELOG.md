@@ -2,6 +2,12 @@
 
 This overview provides notable information about improvements, changes and fixes through all versions.
 
+## v0.1.5 09/09/2020
+
+#### Bug Fixes:
+
+- Fixed broken theme in Vivaldi 3.3.
+
 ## v0.1.4 20/04/2020
 
 #### Bug Fixes:
